@@ -1,0 +1,18 @@
+services:
+  app:
+    build: ./app
+    container_name: flask_app
+    expose:
+      - "5000"
+    restart: unless-stopped
+
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    restart: unless-stopped
