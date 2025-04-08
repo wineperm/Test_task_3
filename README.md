@@ -36,6 +36,7 @@
 
 ## 🏗️ Структура проекта
 
+```
 .
 ├── apache_app/               # Конфигурация с Apache
 │   ├── app/
@@ -64,7 +65,7 @@
     ├── nginx/
     │   └── nginx.conf        # Конфигурация Nginx
     └── docker-compose.yml    # Docker Compose для Nginx
-
+```
 ---
 
 ## 🛠️ Инструкции по запуску 
