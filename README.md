@@ -37,33 +37,33 @@
 ## 🏗️ Структура проекта
 
 .
-├── apache_app/ # Конфигурация с Apache
-│ ├── app/ # Flask-приложение
-│ │ ├── app.py # Основной код
-│ │ ├── Dockerfile # Многоэтапная сборка
-│ │ └── requirements.txt # Зависимости
-│ ├── apache/ # Настройки Apache
-│ │ ├── Dockerfile # Подключение модулей
-│ │ └── my-site.conf # Виртуальный хост
-│ └── docker-compose.yml # Композиция сервисов
+├── apache_app/               # Конфигурация с Apache
+│   ├── app/
+│   │   ├── app.py            # Flask-приложение
+│   │   ├── requirements.txt  # Зависимости Python
+│   │   └── Dockerfile        # Dockerfile для приложения
+│   ├── apache/
+│   │   ├── Dockerfile        # Dockerfile для Apache
+│   │   └── my-site.conf      # Конфигурация виртуального хоста
+│   └── docker-compose.yml    # Docker Compose для Apache
 │
-├── HAproxy_app/ # Конфигурация с HAProxy
-│ ├── app/ # Приложение с Gunicorn
-│ │ ├── app.py # Код Flask
-│ │ ├── Dockerfile # Alpine-образ
-│ │ └── requirements.txt # Gunicorn + Flask
-│ ├── haproxy/ # Настройки HAProxy
-│ │ └── haproxy.cfg # Балансировка нагрузки
-│ └── docker-compose.yml # Композиция сервисов
+├── HAproxy_app/              # Конфигурация с HAProxy
+│   ├── app/
+│   │   ├── app.py            # Flask-приложение
+│   │   ├── requirements.txt  # Зависимости Python (включая Gunicorn)
+│   │   └── Dockerfile        # Dockerfile с Gunicorn
+│   ├── haproxy/
+│   │   └── haproxy.cfg       # Конфигурация HAProxy
+│   └── docker-compose.yml    # Docker Compose для HAProxy
 │
-└── nginx_app/ # Базовое решение (ТЗ)
-├── app/ # Стандартное приложение
-│ ├── app.py # Код Flask
-│ ├── Dockerfile # Slim-образ
-│ └── requirements.txt # Зависимости
-├── nginx/ # Настройки Nginx
-│ └── nginx.conf # Прокси + заголовки
-└── docker-compose.yml # Композиция сервисов
+└── nginx_app/                # Конфигурация с Nginx
+    ├── app/
+    │   ├── app.py            # Flask-приложение
+    │   ├── requirements.txt  # Зависимости Python
+    │   └── Dockerfile        # Dockerfile для приложения
+    ├── nginx/
+    │   └── nginx.conf        # Конфигурация Nginx
+    └── docker-compose.yml    # Docker Compose для Nginx
 
 ---
 
